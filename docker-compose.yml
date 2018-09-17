@@ -1,0 +1,28 @@
+version: '3.7'
+
+services:
+  mysql:
+    image: mariadb:10
+    network_mode: bridge
+    container_name: mysql
+    restart: on-failure
+    environment:
+      MYSQL_ROOT_PASSWORD: vcXVnKtq6
+    volumes:
+    - ./mysql:/var/lib/mysql
+  web:
+    image: wordpress
+    network_mode: bridge
+    container_name: website
+    restart: on-failure
+    volumes:
+    - ./wp-content/plugins:/var/www/html/wp-content/plugins
+    - ./wp-content/theme:/var/www/html/wp-content/themes
+    environment:
+      WORDPRESS_DB_NAME: wordpress
+    ports: 
+    - 8001:80
+    depends_on:
+    - mysql
+    links:
+    - mysql
