@@ -29,7 +29,7 @@ docker-compose up -d
 
 + [Cómo instalar wordpress usando docker](https://pedrojimenez.info/).
 + [Documentación oficial Docker](https://docs.docker.com/).
-* [Documentación oficial Docker-Compose](https://docs.docker.com/compose/).
++ [Documentación oficial Docker-Compose](https://docs.docker.com/compose/).
 + [Cómo instalar docker](https://pedrojimenez.info/).
 
 
