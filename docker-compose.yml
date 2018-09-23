@@ -7,16 +7,16 @@ services:
     container_name: mysql
     restart: on-failure
     environment:
-      MYSQL_ROOT_PASSWORD: vcXVnKtq6
+      MYSQL_ROOT_PASSWORD: password # Password MYSQL Root
     volumes:
-    - ./mysql:/var/lib/mysql
+    - ./mysql:/var/lib/mysql  # Folder con los ficheros mysql
   web:
     image: wordpress
     network_mode: bridge
-    container_name: website
+    container_name: website # Nombre del contenedor ( debe ser único )
     restart: on-failure
     volumes:
-    - ./wp-content/plugins:/var/www/html/wp-content/plugins
+    - ./wp-content/plugins:/var/www/html/wp-content/plugins 
     - ./wp-content/theme:/var/www/html/wp-content/themes
     environment:
       WORDPRESS_DB_NAME: wordpress
